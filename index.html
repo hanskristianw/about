@@ -5,29 +5,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hans Kristian Wijaya</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <style>
+        #photo-container {
+            width: 200px;
+            height: 200px;
+            position: relative;
+            margin: auto;
+        }
+
+        canvas {
+            display: block;
+        }
+    </style>
 </head>
 <body class="bg-gray-50 font-sans">
     <!-- Navbar -->
     <header class="bg-white shadow-md">
         <div class="container mx-auto flex items-center justify-between py-4 px-6">
             <h1 class="text-2xl font-bold text-purple-600">Hans</h1>
-            <nav>
-<!--                 <ul class="flex space-x-6">
-                    <li><a href="#" class="text-gray-600 hover:text-purple-600">Home</a></li>
-                    <li><a href="#about" class="text-gray-600 hover:text-purple-600">About</a></li>
-                    <li><a href="#skills" class="text-gray-600 hover:text-purple-600">Skills</a></li>
-                    <li><a href="#portfolio" class="text-gray-600 hover:text-purple-600">Portfolio</a></li>
-                    <li><a href="#contact" class="text-gray-600 hover:text-purple-600">Contact</a></li>
-                </ul> -->
-            </nav>
+            <nav></nav>
         </div>
     </header>
 
     <!-- Hero Section -->
     <section class="bg-gray-50 py-20">
-        <div class="container mx-auto flex flex-col items-center lg:flex-row lg:justify-between">
+        <div class="container mx-auto flex flex-col lg:flex-row items-center justify-center lg:space-x-8">
             <!-- Text Content -->
-            <div class="text-center lg:text-left lg:max-w-lg lg:ml-12">
+            <div class="text-center lg:max-w-lg">
                 <h2 class="text-4xl font-bold text-gray-800 mb-4">Hi, I'm Hans Kristian</h2>
                 <p class="text-gray-600 text-lg mb-6">
                     Software engineer with 10+ years of experience in building high-quality web applications using CodeIgniter, PHP, and MySQL.
@@ -37,13 +42,39 @@
                 </p>
             </div>
 
-            <!-- Image -->
-            <div class="mt-10 lg:mt-0 lg:mr-12">
-                <div class="w-64 h-64 bg-purple-200 rounded-full flex items-center justify-center relative overflow-hidden">
-                    <img src="selfie.jpg" alt="Hans Kristian" class="w-full h-full object-cover">
-                </div>
-            </div>
+            <!-- 3D Image -->
+            <div id="photo-container"></div>
         </div>
     </section>
+
+    <script>
+        // 3D Animation Setup
+        const container = document.getElementById('photo-container');
+
+        // Scene, Camera, Renderer
+        const scene = new THREE.Scene();
+        const camera = new THREE.PerspectiveCamera(75, 1, 0.1, 1000);
+        const renderer = new THREE.WebGLRenderer({ alpha: true });
+        renderer.setSize(200, 200);
+        container.appendChild(renderer.domElement);
+
+        // Geometry & Texture
+        const geometry = new THREE.CircleGeometry(1, 64);
+        const texture = new THREE.TextureLoader().load('selfie.jpg'); // Ensure selfie.jpg is in the same directory
+        const material = new THREE.MeshBasicMaterial({ map: texture });
+        const mesh = new THREE.Mesh(geometry, material);
+        scene.add(mesh);
+
+        camera.position.z = 2;
+
+        // Animation
+        function animate() {
+            requestAnimationFrame(animate);
+            mesh.rotation.y += 0.01; // Rotate around Y-axis
+            renderer.render(scene, camera);
+        }
+
+        animate();
+    </script>
 </body>
 </html>
