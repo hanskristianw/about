@@ -3,73 +3,47 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Hans Kristian Wijaya</title>
+    <title>Hans Kristian Wijaya</title>
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="bg-gray-100 font-sans leading-normal tracking-normal">
-
-    <header class="bg-green-600 text-white text-center py-6">
-        <h1 class="text-3xl font-bold">About Hans Kristian Wijaya</h1>
+<body class="bg-gray-50 font-sans">
+    <!-- Navbar -->
+    <header class="bg-white shadow-md">
+        <div class="container mx-auto flex items-center justify-between py-4 px-6">
+            <h1 class="text-2xl font-bold text-purple-600">Hans</h1>
+            <nav>
+<!--                 <ul class="flex space-x-6">
+                    <li><a href="#" class="text-gray-600 hover:text-purple-600">Home</a></li>
+                    <li><a href="#about" class="text-gray-600 hover:text-purple-600">About</a></li>
+                    <li><a href="#skills" class="text-gray-600 hover:text-purple-600">Skills</a></li>
+                    <li><a href="#portfolio" class="text-gray-600 hover:text-purple-600">Portfolio</a></li>
+                    <li><a href="#contact" class="text-gray-600 hover:text-purple-600">Contact</a></li>
+                </ul> -->
+            </nav>
+        </div>
     </header>
 
-    <main class="max-w-4xl mx-auto my-8 p-6 bg-white shadow-lg rounded-lg">
-        <section>
-            <h2 class="text-2xl font-bold text-green-600 mb-4">Profile</h2>
-            <p>
-                Software engineer with 10+ years of experience in CodeIgniter 3 and 4, PHP, and MySQL.
-                Proficient in designing and building web applications, with a strong focus on coding standards and best practices.
-            </p>
-        </section>
-
-        <section class="mt-8">
-            <h2 class="text-2xl font-bold text-green-600 mb-4">Experience</h2>
-            <div>
-                <h3 class="text-xl font-semibold mb-2">Software Engineer, Summaedu and Freelance (2011-Present)</h3>
-                <ul class="list-disc list-inside space-y-2">
-                    <li>Led the development of multiple web applications using CodeIgniter 3 and 4, PHP, and MySQL.</li>
-                    <li>Implemented new features and functionality, as well as maintaining and improving existing code.</li>
-                    <li>Collaborated with cross-functional teams to design and implement solutions.</li>
-                    <li>Mentored junior engineers and provided technical guidance as needed.</li>
-                    <li>Worked on the development of a large-scale web application using CodeIgniter, PHP, and MySQL.</li>
-                    <li>Contributed to the design and implementation of new features and functionality.</li>
-                    <li>Assisted with debugging and troubleshooting issues.</li>
-                    <li>Participated in code reviews and provided feedback to improve code quality.</li>
-                </ul>
+    <!-- Hero Section -->
+    <section class="bg-gray-50 py-20">
+        <div class="container mx-auto flex flex-col items-center lg:flex-row lg:justify-between">
+            <!-- Text Content -->
+            <div class="text-center lg:text-left lg:max-w-lg lg:ml-12">
+                <h2 class="text-4xl font-bold text-gray-800 mb-4">Hi, I'm Hans Kristian</h2>
+                <p class="text-gray-600 text-lg mb-6">
+                    Software engineer with 10+ years of experience in building high-quality web applications using CodeIgniter, PHP, and MySQL.
+                </p>
+                <p class="text-gray-600 text-lg mb-6">
+                    Also an experienced educator, teaching at Frateran, Nation Star Academy, and currently at Saint Nicholas School.
+                </p>
             </div>
-            <div class="mt-6">
-                <h3 class="text-xl font-semibold mb-2">Teacher at Frateran and NSA School (2014-Present)</h3>
-                <ul class="list-disc list-inside space-y-2">
-                    <li>Taught computer science courses to high school students.</li>
-                    <li>Developed curriculum and lesson plans.</li>
-                    <li>Assisted students with individualized learning plans.</li>
-                    <li>Led extracurricular activities and clubs.</li>
-                </ul>
+
+            <!-- Image -->
+            <div class="mt-10 lg:mt-0 lg:mr-12">
+                <div class="w-64 h-64 bg-purple-200 rounded-full flex items-center justify-center relative overflow-hidden">
+                    <img src="selfie.jpg" alt="Hans Kristian" class="w-full h-full object-cover">
+                </div>
             </div>
-            <div class="mt-6">
-                <h3 class="text-xl font-semibold mb-2">Teacher at Saint Nicholas School (2024-Present)</h3>
-                <ul class="list-disc list-inside space-y-2">
-                    <li>Taught advanced computer science and programming courses.</li>
-                    <li>Developed interactive teaching materials to engage students effectively.</li>
-                    <li>Organized programming workshops and competitions to inspire learning.</li>
-                    <li>Collaborated with colleagues to improve the overall ICT curriculum.</li>
-                </ul>
-            </div>
-        </section>
-
-        <section class="mt-8">
-            <h2 class="text-2xl font-bold text-green-600 mb-4">Skills</h2>
-            <ul class="list-disc list-inside space-y-2">
-                <li>Proficient in CodeIgniter 3 and 4, PHP, and MySQL</li>
-                <li>Experience with HTML, CSS, and JavaScript</li>
-                <li>Strong understanding of OOP and MVC design patterns</li>
-                <li>Familiar with Agile development methodologies</li>
-            </ul>
-        </section>
-    </main>
-
-    <footer class="bg-green-600 text-white text-center py-4">
-        &copy; 2024 Hans Kristian Wijaya. Built with ❤️ and Tailwind CSS.
-    </footer>
-
+        </div>
+    </section>
 </body>
 </html>
